@@ -1,0 +1,288 @@
+.company {
+  width: 100%;
+  max-width: 1170px;
+
+  background: url('../img/company-background-desktop.png') no-repeat -295px -28px;
+
+  padding: 109px 0 112px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @include retina {
+    background: url('../img/company-background-desktop@2x.png') no-repeat -295px -28px;
+  }
+
+  @include tablet {
+    padding: 54px 24px 83px;
+  }
+
+  @include mobile {
+    padding: 36px 13px 65px;
+  }
+}
+
+.company ul {
+  width: 100%;
+
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  position: relative;
+
+  background: white;
+
+  padding: 0;
+  margin: 0 0 107px;
+
+  @include tablet {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 306px 232px;
+    gap: 30px 28px;
+
+    margin: 0 0 55px;
+  }
+
+  @include mobile {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 310px 310px 232px 244px;
+    gap: 20px 0;
+
+    margin: 0 0 55px;
+  }
+}
+
+.company li {
+  width: 100%;
+  height: 299px;
+
+  position: relative;
+
+  border: 1px solid #EBEBEB;
+
+  padding: 40px 45px 49px;
+  box-sizing: border-box;
+
+  &::before {
+    content: '';
+
+    width: 3px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: #00B2FF;
+  }
+
+  @include tablet {
+    width: 100%;
+    height: auto;
+
+    padding: 24px 27px 49px;
+    box-sizing: border-box;
+  }
+
+  @include mobile {
+    padding: 25px 28px 49px;
+  }
+}
+
+.company li:nth-child(3) {
+  padding: 46px 45px 49px 44px;
+
+  @include tablet {
+    padding: 24px 27px 49px;
+  }
+}
+
+.company svg {
+  margin: 0 0 18px;
+
+  @include tablet {
+    margin: 0 0 3px;
+  }
+
+  @include mobile {
+    margin: 0 0 6px;
+  }
+}
+
+.company li:first-child svg {
+  width: 29px;
+  height: 35px;
+}
+
+.company li:nth-child(2) svg {
+  width: 35px;
+  height: 35px;
+}
+
+.company li:nth-child(3) svg {
+  width: 36px;
+  height: 31px;
+}
+
+.company li:last-child svg {
+  width: 35px;
+  height: 35px;
+}
+
+.company h3 {
+  font-size: 24px;
+  line-height: 33.75px;
+
+  color: #00B2FF;
+
+  margin: 0 0 18px;
+
+  @include tablet {
+    margin: 0 0 10px;
+  }
+
+  @include mobile {
+    font-size: 20px;
+    line-height: 28.13px;
+  }
+}
+
+.company p {
+  font-family: "PTMono", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 21.5px;
+  font-weight: 400;
+
+  color: #666666;
+
+  margin: 0;
+}
+
+.company__about {
+  display: flex;
+
+  position: relative;
+
+  padding: 0 0 0 180px;
+
+  color: #666666;
+
+  @include tablet {
+    padding: 0 0 0 189px;
+  }
+  @include mobile {
+    padding: 0 0 0 4px;
+  }
+}
+
+.company__about img {
+  width: 220px;
+  height: 317px;
+
+  position: absolute;
+  top: 3px;
+  left: -30px;
+
+  @include tablet {
+    width: 251.08px;
+    height: 361.79px;
+
+    top: 0;
+    left: -27px;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.company__about-main {
+  width: 100%;
+}
+
+.company__about-main h2 {
+  font-size: 36px;
+  line-height: 50.63px;
+
+  margin: 0 0 23px;
+
+  @include tablet {
+    font-size: 32px;
+    line-height: 45px;
+
+    margin: 0 0 26px;
+  }
+
+  @include mobile {
+    margin: 0 0 17px;
+  }
+}
+
+.company__about-main p {
+  font-family: "PTMono", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 21.5px;
+  font-weight: 400;
+
+  margin: 0 0 38px;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.company__about-main-tablet-text p {
+  display: none;
+
+  @include tablet {
+    font-family: "PTMono", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 21.5px;
+    font-weight: 400;
+
+    display: block;
+
+    margin: 0 0 43px;
+  }
+
+  @include mobile {
+    margin: 0 0 33px;
+  }
+}
+
+.company__about-main a {
+  width: 180px;
+  height: 45px;
+
+  font-size: 14px;
+  line-height: 16.41px;
+  font-weight: 700;
+  letter-spacing: 5%;
+  text-transform: uppercase;
+  text-align: center;
+
+  display: block;
+
+  color: #00B2FF;
+
+  border: 1px solid #00B2FF;
+  border-radius: 5px;
+
+  padding: 14px 0 8px;
+  box-sizing: border-box;
+}
+
+.company li:hover,
+.company li:hover h3,
+.company li:hover p,
+.company li:hover path {
+  color: #ffffff;
+  fill: #ffffff;
+  background: #00B2FF;
+}

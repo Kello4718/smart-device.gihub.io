@@ -1,0 +1,176 @@
+.catalog {
+  width: 100%;
+
+  color: #ffffff;
+  background: #1B2D37;
+
+  padding: 88px 0 124px;
+  box-sizing: border-box;
+
+  @include tablet {
+    padding: 50px 25px 70px;
+  }
+
+  @include mobile {
+    padding: 50px 15px 64px;
+  }
+}
+
+.catalog p {
+  max-width: 1170px;
+
+  display: block;
+
+  font-size: 36px;
+  line-height: 50.63px;
+
+  margin: 0 auto 52px;
+
+  @include tablet {
+    font-size: 32px;
+    line-height: 45px;
+
+    margin: 0 auto 49px;
+  }
+
+  @include mobile {
+    font-size: 28px;
+    line-height: 39.38px;
+
+    padding: 0 0 0 10px;
+    margin: 0 0 41px;
+  }
+}
+
+
+
+.catalog ul {
+  width: 100%;
+  max-width: 1170px;
+
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+
+  padding: 0;
+  margin: 0 auto;
+
+  @include tablet {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: none;
+    gap: 42px 0;
+  }
+
+  @include mobile {
+    gap: 30px 0;
+  }
+}
+
+.catalog li {
+  width: 100%;
+}
+
+.catalog figure {
+  position: relative;
+
+  margin: 0;
+}
+
+.catalog figcaption {
+  font-size: 20px;
+  line-height: 30px;
+
+  position: absolute;
+  top: 50px;
+  left: 43px;
+
+  @include tablet {
+    top: 40px;
+    left: 45px;
+  }
+
+  @include mobile {
+    top: 20px;
+    left: 35px;
+  }
+}
+
+.catalog li:nth-child(3) figcaption {
+  @include mobile {
+    top: 31px;
+  }
+}
+
+.catalog img {
+  width: 100%;
+  height: auto;
+
+  @include mobile {
+    min-width: 290px;
+    min-height: 256px;
+
+    display: block;
+  }
+}
+
+.catalog a {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+
+  @include tablet {
+    right: 4px;
+    bottom: 5px;
+  }
+
+  @include mobile {
+    right: 0;
+    bottom: 0;
+  }
+
+  &:focus {
+    outline: 3px solid deeppink;
+  }
+}
+
+.catalog li:nth-child(2) a {
+  @include tablet {
+    right: -1px;
+    bottom: 5px;
+  }
+
+  @include mobile {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.catalog li:nth-child(3) a {
+  @include tablet {
+    right: -1px;
+    bottom: 6px;
+  }
+
+  @include mobile {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.catalog svg {
+  width: 4px;
+  height: 8px;
+
+  background: #00B2FF;
+
+  padding: 27.5px 27px 27.5px 32px;
+}

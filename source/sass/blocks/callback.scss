@@ -1,0 +1,280 @@
+.callback {
+  width: 100%;
+
+  color: #ffffff;
+  background: #00B2FF url('../img/callback-background-desktop.png') no-repeat;
+
+  padding: 91px 0 114px;
+  box-sizing: border-box;
+
+  @include retina {
+    background: #00B2FF url('../img/callback-background-desktop@2x.png') no-repeat;
+  }
+
+  @include tablet {
+    background: #00B2FF;
+
+    padding: 80px 87px 105px 92px;
+  }
+
+  @include mobile {
+    padding: 29px 15px 44px;
+  }
+}
+
+.callback__wrapper {
+  width: 570px;
+
+  display: block;
+
+  padding: 0 19.53% 0 0;
+  margin: 0 0 0 auto;
+  //box-sizing: border-box;
+
+  @include tablet {
+    width: 100%;
+
+    margin: 0;
+  }
+
+  @include mobile {
+    width: 100%;
+
+    padding: 0;
+  }
+}
+
+.callback__wrapper h2 {
+  font-size: 36px;
+  line-height: 50.63px;
+
+  margin: 0 0 11px;
+
+  @include tablet {
+    font-size: 32px;
+    line-height: 45px;
+
+    margin: 0 0 16px;
+  }
+
+  @include mobile {
+    font-size: 28px;
+    line-height: 39.38px;
+
+    margin: 0 0 14px;
+  }
+}
+
+.callback__wrapper p {
+  font-family: "PTMono", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 21.5px;
+  font-weight: 400;
+
+  margin: 0 0 50px;
+
+  @include tablet {
+    margin: 0 0 54px;
+  }
+
+  @include mobile {
+    margin: 0 0 26px;
+  }
+}
+
+.callback__wrapper form {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+
+  background: #00B2FF;
+}
+
+.callback__wrapper input {
+  width: 270px;
+  height: 50px;
+
+  border: none;
+
+  color: #ffffff;
+  background: hsla(0 0% 100% / 10%);
+
+  padding: 14px 16px;
+  margin: 0 0 40px;
+  box-sizing: border-box;
+
+  @include tablet {
+    width: 47.4%;
+    height: 51.83px;
+
+    font-family: "PTMono", "Arial", sans-serif;
+
+    padding: 11px 16px 14px 20px;
+    margin: 0 0 42px;
+  }
+
+  @include mobile {
+    width: 100%;
+
+    margin: 0 0 30px;
+  }
+}
+
+.callback__wrapper textarea {
+  width: 100%;
+  height: 154px;
+
+  border: none;
+
+  color: #ffffff;
+  background: hsla(0 0% 100% / 10%);
+
+  padding: 13px 16px;
+  margin: 0 0 43px;
+  box-sizing: border-box;
+
+  @include tablet {
+    height: 159px;
+
+    margin: 0 0 45px;
+  }
+
+  @include mobile {
+    height: 104px;
+
+    margin: 0 0 31px;
+  }
+}
+
+.callback__button-wrapper {
+  width: 270px;
+  height: 45px;
+
+  display: inherit;
+
+  margin: 0;
+
+  @include tablet {
+    width: 280px;
+  }
+
+  @include mobile {
+    width: 100%;
+
+    margin: 0 0 30.35px;
+  }
+}
+
+.callback__button-wrapper button {
+  width: 100%;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 16.41px;
+  font-weight: 700;
+  letter-spacing: 5%;
+  text-align: center;
+  text-transform: uppercase;
+
+  display: block;
+
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+
+  color: #ffffff;
+  background: transparent;
+
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.callback__checkbox-wrapper {
+  width: 262px;
+
+  padding: 7px 0 0;
+
+  @include tablet {
+    width: 271px;
+
+    padding: 6px 0 0;
+  }
+
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.callback__checkbox-wrapper label {
+  padding: 0 0 0 31px;
+}
+
+.callback__checkbox-wrapper input {
+  width: 16px;
+  height: 16px;
+
+  position: absolute;
+  background: transparent;
+
+  margin: 0 0 0 -31px;
+
+  appearance: none;
+}
+
+.callback__checkbox-wrapper input:focus {
+  outline: none;
+}
+
+.callback__checkbox-wrapper span {
+  font-family: "PTMono", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 15.68px;
+  font-weight: 400;
+
+  display: inline-block;
+
+  position: relative;
+
+  opacity: 80%;
+
+  &::before {
+    content: '';
+
+    width: 16px;
+    height: 16px;
+
+    position: absolute;
+    top: 2px;
+    left: -31px;
+
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+  }
+
+  &::after {
+    content: '';
+
+    width: 7.5px;
+    height: 4.5px;
+
+    display: none;
+
+    position: absolute;
+    top: 8px;
+    left: -27px;
+
+    background: transparent url('../img/checkbox-checked.svg');
+
+    margin: auto;
+  }
+}
+
+.callback__checkbox-wrapper input:checked + span::after {
+  display: block;
+}
+
+.callback__checkbox-wrapper input:focus + span::before {
+  outline: 2px solid deeppink;
+
+}
