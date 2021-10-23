@@ -42,8 +42,6 @@
   }
 }
 
-
-
 .catalog ul {
   width: 100%;
   max-width: 1170px;
@@ -70,6 +68,10 @@
 
 .catalog li {
   width: 100%;
+
+  &:hover {
+    box-shadow: 0 0 10px 5px currentColor;
+  }
 }
 
 .catalog figure {
@@ -97,7 +99,7 @@
   }
 }
 
-.catalog li:nth-child(3) figcaption {
+.catalog li:nth-child(3n + 3) figcaption {
   @include mobile {
     top: 31px;
   }
@@ -142,7 +144,7 @@
   }
 }
 
-.catalog li:nth-child(2) a {
+.catalog li:nth-child(3n + 2) a {
   @include tablet {
     right: -1px;
     bottom: 5px;
@@ -154,7 +156,7 @@
   }
 }
 
-.catalog li:nth-child(3) a {
+.catalog li:nth-child(3n + 3) a {
   @include tablet {
     right: -1px;
     bottom: 6px;

@@ -29,7 +29,6 @@
 
   padding: 0 19.53% 0 0;
   margin: 0 0 0 auto;
-  //box-sizing: border-box;
 
   @include tablet {
     width: 100%;
@@ -99,7 +98,7 @@
   border: none;
 
   color: #ffffff;
-  background: hsla(0 0% 100% / 10%);
+  background: #{'hsla(0 0% 100% / 10%)'};
 
   padding: 14px 16px;
   margin: 0 0 40px;
@@ -120,16 +119,21 @@
 
     margin: 0 0 30px;
   }
+
+  &:hover {
+    box-shadow: 0 0 10px 5px currentColor;
+  }
 }
 
 .callback__wrapper textarea {
   width: 100%;
-  height: 154px;
+  height: auto;
+  min-height: 154px;
 
   border: none;
 
   color: #ffffff;
-  background: hsla(0 0% 100% / 10%);
+  background: #{'hsla(0 0% 100% / 10%)'};
 
   padding: 13px 16px;
   margin: 0 0 43px;
@@ -143,8 +147,13 @@
 
   @include mobile {
     height: 104px;
+    min-height: 104px;
 
     margin: 0 0 31px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px 5px currentColor;
   }
 }
 
@@ -188,6 +197,10 @@
 
   padding: 0;
   box-sizing: border-box;
+
+  &:hover {
+    box-shadow: 0 0 10px 5px currentColor;
+  }
 }
 
 .callback__checkbox-wrapper {
@@ -220,6 +233,10 @@
   margin: 0 0 0 -31px;
 
   appearance: none;
+
+  &:hover {
+    box-shadow: none;
+  }
 }
 
 .callback__checkbox-wrapper input:focus {

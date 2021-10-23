@@ -9,7 +9,7 @@
   position: absolute;
   inset: 0 0 0 0;
 
-  background: rgb(0, 0, 0, 90%);
+  background: rgba(0, 0, 0, 0.808);
 }
 
 .modal__wrapper {
@@ -63,11 +63,15 @@
   border: none;
 
   color: #ffffff;
-  background: hsla(0 0% 100% / 10%);
+  background: #{'hsla(0 0% 100% / 10%)'};
 
   padding: 0 24px;
   margin: 0 0 30px;
   box-sizing: border-box;
+
+  &:hover {
+    box-shadow: 0 0 10px 5px currentColor;
+  }
 }
 
 .modal textarea {
@@ -81,11 +85,15 @@
   border: none;
 
   color: #ffffff;
-  background: hsla(0 0% 100% / 10%);
+  background: #{'hsla(0 0% 100% / 10%)'};
 
   padding: 11px 25px;
   margin: 0 0 30px;
   box-sizing: border-box;
+
+  &:hover {
+    box-shadow: 0 0 10px 5px currentColor;
+  }
 }
 
 .modal__button-wrapper {
@@ -118,6 +126,10 @@
 
   padding: 0;
   box-sizing: border-box;
+
+  &:hover {
+    box-shadow: 0 0 10px 5px currentColor;
+  }
 }
 
 .modal__checkbox-wrapper {
@@ -140,6 +152,10 @@
   margin: 0 0 0 -47px;
 
   appearance: none;
+
+  &:hover {
+    box-shadow: none;
+  }
 }
 
 .modal__checkbox-wrapper input:focus {

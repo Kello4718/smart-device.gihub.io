@@ -69,6 +69,8 @@
   padding: 40px 45px 49px;
   box-sizing: border-box;
 
+  cursor: pointer;
+
   &::before {
     content: '';
 
@@ -135,7 +137,7 @@
   height: 35px;
 }
 
-.company h3 {
+.company p {
   font-size: 24px;
   line-height: 33.75px;
 
@@ -153,7 +155,7 @@
   }
 }
 
-.company p {
+.company span {
   font-family: "PTMono", "Arial", sans-serif;
   font-size: 16px;
   line-height: 21.5px;
@@ -276,6 +278,10 @@
 
   padding: 14px 0 8px;
   box-sizing: border-box;
+
+  &:hover {
+    box-shadow: 0 0 10px 5px currentColor;
+  }
 }
 
 .company li:hover,

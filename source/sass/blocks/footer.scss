@@ -100,8 +100,8 @@
   @include mobile {
     border-bottom: 1px solid #626962;
 
-    padding: 0 0 55px;
-    margin: 0 0 28px;
+    padding: 0 0 50px;
+    margin: 0 0 29px;
   }
 }
 
@@ -158,6 +158,12 @@
 .footer__social-network svg {
   width: 27px;
   height: 27px;
+
+  &:hover {
+    box-shadow: 0 0 10px 5px currentColor;
+
+    border-radius: 50%;
+  }
 }
 
 .footer__sections {
@@ -236,6 +242,10 @@
   display: block;
 
   color: #1B2D37;
+
+  &:hover {
+    color: deepskyblue;
+  }
 }
 
 .footer__our-office {
@@ -288,7 +298,7 @@
   @include mobile {
     height: max-content;
 
-    margin: 0 0 32px;
+    margin: 0;
   }
 }
 
@@ -319,7 +329,6 @@
 
     margin: 0 0 0 auto;
   }
-
 }
 
 .footer__sections-svg-plus--hide,
@@ -350,6 +359,10 @@
 
 .footer__our-office a {
   color: #1B2D37;
+
+  &:hover {
+    color: deepskyblue
+  }
 }
 
 .footer__copyright {
