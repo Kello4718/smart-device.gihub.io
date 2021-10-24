@@ -56,7 +56,6 @@ const scripts = () => {
   .pipe(babel({
       presets: ['@babel/preset-env']
   }))
-  .pipe(terser())
   .pipe(gulp.dest('build/js'));
 };
 
