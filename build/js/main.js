@@ -1,1 +1,150 @@
-"use strict";const body=document.querySelector(".body"),orderCallButton=document.querySelector("#order-call"),modal=document.querySelector(".modal"),modalForm=modal.querySelector("form"),modalInputName=document.querySelector(".modal__input-name"),modalInputPhone=document.querySelector(".modal__input-phone"),modalTextareaQuestion=document.querySelector(".modal__textarea"),modalClose=document.querySelector(".modal__close"),footerSections=document.querySelector(".footer__sections"),footerSectionsButton=footerSections.querySelector("button"),footerSectionsSvgPlus=footerSections.querySelector(".footer__sections-svg-plus"),footerSectionsSvgMinus=footerSections.querySelector(".footer__sections-svg-minus"),footerSectionsList=document.querySelector(".footer__sections-list"),footerOurOffice=document.querySelector(".footer__our-office"),footerOurOfficeButton=footerOurOffice.querySelector("button"),footerOurOfficeSvgPlus=footerOurOffice.querySelector(".footer__our-office-svg-plus"),footerOurOfficeSvgMinus=footerOurOffice.querySelector(".footer__our-office-svg-minus"),footerOurOfficeList=document.querySelector(".footer__our-office-list");orderCallButton.addEventListener("click",(e=>{e.preventDefault(),modal.classList.remove("modal--hide"),modalInputName.focus()})),modalClose.addEventListener("click",(()=>{modal.classList.add("modal--hide")})),document.addEventListener("keydown",(e=>{"ESC"!==e.key&&"Escape"!==e.key||modal.classList.add("modal--hide")})),modal.addEventListener("click",(e=>{e.target===modal&&modal.classList.add("modal--hide")}));const myLocalStorage=()=>{localStorage.setItem("name",modalInputName.value),localStorage.setItem("tel",modalInputPhone.value),localStorage.setItem("question",modalTextareaQuestion.value)},getDataToLocalStorage=()=>{modalInputName.addEventListener("input",myLocalStorage),modalInputPhone.addEventListener("input",myLocalStorage),modalTextareaQuestion.addEventListener("input",myLocalStorage),modalForm.addEventListener("submit",(e=>{e.preventDefault(),myLocalStorage(),modalInputName.value="",modalInputPhone.value="",modalTextareaQuestion.value="",modal.classList.add("modal--hide")}))};modalInputName.addEventListener("input",myLocalStorage),modalInputPhone.addEventListener("input",myLocalStorage),modalTextareaQuestion.addEventListener("input",myLocalStorage),modalForm.addEventListener("submit",(e=>{e.preventDefault(),myLocalStorage(),modalInputName.value="",modalInputPhone.value="",modalTextareaQuestion.value="",modal.classList.add("modal--hide")}));const handlerFooterSection=(e,t,o,i,s)=>{e.classList.contains(`footer__${t}-list--hide`)?(e.classList.remove(`footer__${t}-list--hide`),o.style.margin="0 0 32px",i.style.display="none",s.style.display="inherit"):(e.classList.add(`footer__${t}-list--hide`),o.style.margin="0",i.style.display="inherit",s.style.display="none")},handlerFooterContent=()=>{footerSectionsButton.addEventListener("click",(()=>{handlerFooterSection(footerSectionsList,"sections",footerSectionsButton,footerSectionsSvgPlus,footerSectionsSvgMinus),footerOurOfficeList.classList.contains("footer__our-office-list--hide")||(footerOurOfficeList.classList.add("footer__our-office-list--hide"),footerOurOfficeButton.style.margin="0",footerOurOfficeSvgPlus.style.display="inherit",footerOurOfficeSvgMinus.style.display="none")})),footerOurOfficeButton.addEventListener("click",(()=>{handlerFooterSection(footerOurOfficeList,"our-office",footerOurOfficeButton,footerOurOfficeSvgPlus,footerOurOfficeSvgMinus),footerSectionsList.classList.contains("footer__sections-list--hide")||(footerSectionsList.classList.add("footer__sections-list--hide"),footerSectionsButton.style.margin="0",footerSectionsSvgPlus.style.display="inherit",footerSectionsSvgMinus.style.display="none")}))};function maskPhone(e,t="+7 (___) ___-__-__"){const o=document.querySelectorAll(e);function i(e){const o=e.keyCode,i=t,s=i.replace(/\D/g,""),r=this.value.replace(/\D/g,"");let n=0,l=i.replace(/[_\d]/g,(e=>n<r.length?r.charAt(n++)||s.charAt(n):e));n=l.indexOf("_"),-1!==n&&(l=l.slice(0,n));let a=i.substr(0,this.value.length).replace(/_+/g,(e=>"\\d{1,"+e.length+"}")).replace(/[+()]/g,"\\$&");a=new RegExp("^"+a+"$"),(!a.test(this.value)||this.value.length<5||o>47&&o<58)&&(this.value=l),"blur"===e.type&&this.value.length<5&&(this.value="")}for(const e of o)e.addEventListener("input",i),e.addEventListener("focus",i),e.addEventListener("blur",i)}footerSectionsButton.addEventListener("click",(()=>{handlerFooterSection(footerSectionsList,"sections",footerSectionsButton,footerSectionsSvgPlus,footerSectionsSvgMinus),footerOurOfficeList.classList.contains("footer__our-office-list--hide")||(footerOurOfficeList.classList.add("footer__our-office-list--hide"),footerOurOfficeButton.style.margin="0",footerOurOfficeSvgPlus.style.display="inherit",footerOurOfficeSvgMinus.style.display="none")})),footerOurOfficeButton.addEventListener("click",(()=>{handlerFooterSection(footerOurOfficeList,"our-office",footerOurOfficeButton,footerOurOfficeSvgPlus,footerOurOfficeSvgMinus),footerSectionsList.classList.contains("footer__sections-list--hide")||(footerSectionsList.classList.add("footer__sections-list--hide"),footerSectionsButton.style.margin="0",footerSectionsSvgPlus.style.display="inherit",footerSectionsSvgMinus.style.display="none")})),maskPhone("input[type=tel]"),window.addEventListener("load",(()=>{window.innerWidth<770&&(footerSectionsList.classList.add("footer__sections-list--hide"),footerOurOfficeList.classList.add("footer__our-office-list--hide"),footerSectionsSvgPlus.style.display="inherit",footerSectionsSvgMinus.style.display="none",footerOurOfficeSvgPlus.style.display="inherit",footerOurOfficeSvgMinus.style.display="none",footerSectionsButton.style.margin="0")}));
+"use strict";
+
+// Переменные
+const body = document.querySelector('.body');
+const orderCallButton = document.querySelector('#order-call');
+const modal = document.querySelector('.modal');
+const modalForm = modal.querySelector('form');
+const modalInputName = document.querySelector('.modal__input-name');
+const modalInputPhone = document.querySelector('.modal__input-phone');
+const modalTextareaQuestion = document.querySelector('.modal__textarea');
+const modalClose = document.querySelector('.modal__close');
+const footerSections = document.querySelector('.footer__sections');
+const footerSectionsButton = footerSections.querySelector('button');
+const footerSectionsSvgPlus = footerSections.querySelector('.footer__sections-svg-plus');
+const footerSectionsSvgMinus = footerSections.querySelector('.footer__sections-svg-minus');
+const footerSectionsList = document.querySelector('.footer__sections-list');
+const footerOurOffice = document.querySelector('.footer__our-office');
+const footerOurOfficeButton = footerOurOffice.querySelector('button');
+const footerOurOfficeSvgPlus = footerOurOffice.querySelector('.footer__our-office-svg-plus');
+const footerOurOfficeSvgMinus = footerOurOffice.querySelector('.footer__our-office-svg-minus');
+const footerOurOfficeList = document.querySelector('.footer__our-office-list'); // Код по работе с модальным окном
+
+orderCallButton.addEventListener('click', evt => {
+  evt.preventDefault();
+  modal.classList.remove('modal--hide');
+  modalInputName.focus();
+});
+modalClose.addEventListener('click', () => {
+  modal.classList.add('modal--hide');
+});
+document.addEventListener('keydown', evt => {
+  if (evt.key === 'ESC' || evt.key === 'Escape') {
+    modal.classList.add('modal--hide');
+  }
+});
+modal.addEventListener('click', evt => {
+  if (evt.target === modal) {
+    modal.classList.add('modal--hide');
+  }
+}); // Функция, которая сохраняет данные с формы в local storage
+
+const myLocalStorage = () => {
+  localStorage.setItem('name', modalInputName.value);
+  localStorage.setItem('tel', modalInputPhone.value);
+  localStorage.setItem('question', modalTextareaQuestion.value);
+};
+
+const getDataToLocalStorage = () => {
+  modalInputName.addEventListener('input', myLocalStorage);
+  modalInputPhone.addEventListener('input', myLocalStorage);
+  modalTextareaQuestion.addEventListener('input', myLocalStorage);
+  modalForm.addEventListener('submit', evt => {
+    evt.preventDefault();
+    myLocalStorage();
+    modalInputName.value = '';
+    modalInputPhone.value = '';
+    modalTextareaQuestion.value = '';
+    modal.classList.add('modal--hide');
+  });
+};
+
+getDataToLocalStorage(); // Аккордеон в футере
+// Функция, которая показывает и скрывает контент раздела по клику
+
+const handlerFooterSection = (sectionList, sectionListClass, sectionButton, sectionSvgPlus, sectionSvgMinus) => {
+  if (sectionList.classList.contains(`footer__${sectionListClass}-list--hide`)) {
+    sectionList.classList.remove(`footer__${sectionListClass}-list--hide`);
+    sectionButton.style.margin = '0 0 32px';
+    sectionSvgPlus.style.display = 'none';
+    sectionSvgMinus.style.display = 'inherit';
+  } else {
+    sectionList.classList.add(`footer__${sectionListClass}-list--hide`);
+    sectionButton.style.margin = '0';
+    sectionSvgPlus.style.display = 'inherit';
+    sectionSvgMinus.style.display = 'none';
+  }
+};
+
+const handlerFooterContent = () => {
+  footerSectionsButton.addEventListener('click', () => {
+    handlerFooterSection(footerSectionsList, 'sections', footerSectionsButton, footerSectionsSvgPlus, footerSectionsSvgMinus);
+
+    if (!footerOurOfficeList.classList.contains('footer__our-office-list--hide')) {
+      footerOurOfficeList.classList.add('footer__our-office-list--hide');
+      footerOurOfficeButton.style.margin = '0';
+      footerOurOfficeSvgPlus.style.display = 'inherit';
+      footerOurOfficeSvgMinus.style.display = 'none';
+    }
+  });
+  footerOurOfficeButton.addEventListener('click', () => {
+    handlerFooterSection(footerOurOfficeList, 'our-office', footerOurOfficeButton, footerOurOfficeSvgPlus, footerOurOfficeSvgMinus);
+
+    if (!footerSectionsList.classList.contains('footer__sections-list--hide')) {
+      footerSectionsList.classList.add('footer__sections-list--hide');
+      footerSectionsButton.style.margin = '0';
+      footerSectionsSvgPlus.style.display = 'inherit';
+      footerSectionsSvgMinus.style.display = 'none';
+    }
+  });
+};
+
+handlerFooterContent(); // Маска для телефона
+
+function maskPhone(selector, masked = '+7 (___) ___-__-__') {
+  const elems = document.querySelectorAll(selector);
+
+  function mask(event) {
+    const keyCode = event.keyCode;
+    const template = masked,
+          def = template.replace(/\D/g, ''),
+          val = this.value.replace(/\D/g, '');
+    let i = 0,
+        newValue = template.replace(/[_\d]/g, a => i < val.length ? val.charAt(i++) || def.charAt(i) : a);
+    i = newValue.indexOf('_');
+
+    if (i !== -1) {
+      newValue = newValue.slice(0, i);
+    }
+
+    let reg = template.substr(0, this.value.length).replace(/_+/g, a => '\\d{1,' + a.length + '}').replace(/[+()]/g, '\\$&');
+    reg = new RegExp('^' + reg + '$');
+
+    if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) {
+      this.value = newValue;
+    }
+
+    if (event.type === 'blur' && this.value.length < 5) {
+      this.value = '';
+    }
+  }
+
+  for (const elem of elems) {
+    elem.addEventListener('input', mask);
+    elem.addEventListener('focus', mask);
+    elem.addEventListener('blur', mask);
+  }
+}
+
+maskPhone('input[type=tel]');
+window.addEventListener('load', () => {
+  if (window.innerWidth < 770) {
+    footerSectionsList.classList.add('footer__sections-list--hide');
+    footerOurOfficeList.classList.add('footer__our-office-list--hide');
+    footerSectionsSvgPlus.style.display = 'inherit';
+    footerSectionsSvgMinus.style.display = 'none';
+    footerOurOfficeSvgPlus.style.display = 'inherit';
+    footerOurOfficeSvgMinus.style.display = 'none';
+    footerSectionsButton.style.margin = '0';
+  }
+});
