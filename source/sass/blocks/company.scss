@@ -97,7 +97,7 @@
   }
 }
 
-.company li:nth-child(3) {
+.company li:nth-child(3n + 3) {
   padding: 46px 45px 49px 44px;
 
   @include tablet {
@@ -122,12 +122,12 @@
   height: 35px;
 }
 
-.company li:nth-child(2) svg {
+.company li:nth-child(3n + 2) svg {
   width: 35px;
   height: 35px;
 }
 
-.company li:nth-child(3) svg {
+.company li:nth-child(3n + 3) svg {
   width: 36px;
   height: 31px;
 }

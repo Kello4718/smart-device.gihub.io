@@ -369,8 +369,8 @@
   width: 100%;
 
   font-family: "PTMono", "Arial", sans-serif;
-  font-size: 15px;
-  line-height: 25px;
+  font-size: 13px;
+  line-height: 24px;
   font-weight: 400;
   text-transform: uppercase;
   list-style: none;
@@ -404,7 +404,7 @@
 }
 
 .footer__copyright-rights {
-  margin: 0 3.5% 0 0;
+  margin: 0 4.7% 0 0;
 
   @include tablet {
     display: none;
@@ -412,7 +412,7 @@
 }
 
 .footer__copyright-period {
-  margin: 0 7.4% 0 0;
+  margin: 0 9.7% 0 0;
 
   @include tablet {
     display: none;

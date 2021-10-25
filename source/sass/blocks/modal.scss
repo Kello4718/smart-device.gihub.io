@@ -52,6 +52,13 @@
   flex-flow: row wrap;
 }
 
+.modal label {
+  width: 100%;
+  height: 51.83px;
+
+  margin: 0 0 30px;
+}
+
 .modal input {
   width: 100%;
   height: 51.83px;
@@ -66,7 +73,6 @@
   background: #{'hsla(0 0% 100% / 10%)'};
 
   padding: 0 24px;
-  margin: 0 0 30px;
   box-sizing: border-box;
 
   &:hover {
