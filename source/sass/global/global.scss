@@ -18,16 +18,13 @@
   box-sizing: border-box;
 }
 
-/** {
-  outline: 2px solid red;
-  outline-offset: -2px;
-}*/
-
 .body {
   height: 100%;
 
   display: flex;
   flex-flow: column;
+
+  margin: 0;
 }
 
 .main {
@@ -55,4 +52,19 @@ a {
   text-decoration: none;
 
   color: white;
+}
+
+img {
+  border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
 }
