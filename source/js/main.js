@@ -1,7 +1,5 @@
 // Переменные
 
-const body = document.querySelector('.body');
-
 const orderCallButton = document.querySelector('#order-call');
 const modal = document.querySelector('.modal');
 const modalForm = modal.querySelector('form');
@@ -47,19 +45,19 @@ modal.addEventListener('click', (evt) => {
 
 // Функция, которая сохраняет данные с формы в local storage
 
-const myLocalStorage = () => {
+const toUseMyLocalStorage = () => {
   localStorage.setItem('name', modalInputName.value);
   localStorage.setItem('tel', modalInputPhone.value);
   localStorage.setItem('question', modalTextareaQuestion.value);
 };
 
 const getDataToLocalStorage = () => {
-  modalInputName.addEventListener('input', myLocalStorage);
-  modalInputPhone.addEventListener('input', myLocalStorage);
-  modalTextareaQuestion.addEventListener('input', myLocalStorage);
+  modalInputName.addEventListener('input', toUseMyLocalStorage);
+  modalInputPhone.addEventListener('input', toUseMyLocalStorage);
+  modalTextareaQuestion.addEventListener('input', toUseMyLocalStorage);
   modalForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    myLocalStorage();
+    toUseMyLocalStorage();
     modalInputName.value = '';
     modalInputPhone.value = '';
     modalTextareaQuestion.value = '';
@@ -126,8 +124,8 @@ function maskPhone(selector, masked = '+7 (___) ___-__-__') {
       newValue = newValue.slice(0, i);
     }
     let reg = template.substr(0, this.value.length).replace(/_+/g,
-      (a) => '\\d{1,' + a.length + '}').replace(/[+()]/g, '\\$&');
-    reg = new RegExp('^' + reg + '$');
+      (a) => `\\d{1,${  a.length  }}`).replace(/[+()]/g, '\\$&');
+    reg = new RegExp(`^${  reg  }$`);
     if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) {
       this.value = newValue;
     }
