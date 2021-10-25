@@ -6,8 +6,6 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const csso = require('postcss-csso');
 const rename = require('gulp-rename');
-const htmlmin = require('gulp-htmlmin');
-const terser = require('gulp-terser');
 const rollup = require('rollup-stream');
 const babel = require('gulp-babel');
 const buffer = require('vinyl-buffer');
@@ -39,7 +37,6 @@ exports.styles = styles;
 
 const html = () => gulp.src('source/*.html')
   .pipe(plumber())
-  .pipe(htmlmin({ collapseWhitespace: true }))
   .pipe(gulp.dest('build'));
 
 exports.html = html;
@@ -103,7 +100,6 @@ const copy = (done) => {
     'source/fonts/*.{woff2,woff}',
     'source/*.{ico,svg}',
     'source/img/**/*.{jpg,png,svg}',
-    'source/css/normalize.css',
   ], {
     base: 'source',
   })

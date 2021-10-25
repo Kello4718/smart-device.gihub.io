@@ -1,7 +1,10 @@
 {
   "name": "gulp",
   "scripts": {
-    "test": "eslint ./source/js && stylelint ./source/sass/**/*.scss --syntax scss",
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "eslint": "eslint source/js/",
+    "test": "npm run editorconfig && npm run stylelint && eslint source/js/",
     "fix": "eslint --fix ./source/js && stylelint --fix ./source/sass/",
     "start": "gulp",
     "build": "gulp build"
@@ -13,7 +16,10 @@
     "autoprefixer": "^9.0.0",
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
+    "editorconfig": "^0.13.3",
+    "editorconfig-cli": "^0.3.0",
     "eslint": "^7.31.0",
+    "eslint-cli": "^1.1.1",
     "eslint-config-htmlacademy": "^4.0.2",
     "eslint-plugin-import": "^2.24.1",
     "eslint-plugin-optimize-regex": "^1.2.1",
