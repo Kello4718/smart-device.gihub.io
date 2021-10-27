@@ -19,7 +19,7 @@ const browserSync = require('browser-sync');
 // Styles
 
 const styles = () => gulp.src('source/sass/style.scss')
-  .pipe(plumber())
+  //.pipe(plumber())
   .pipe(sourcemap.init())
   .pipe(sass())
   .pipe(postcss([
