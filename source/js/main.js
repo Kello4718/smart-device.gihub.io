@@ -93,6 +93,7 @@ const handlerFooterContent = () => {
       footerOurOfficeSvgPlus.style.display = 'inherit';
       footerOurOfficeSvgMinus.style.display = 'none';
     }
+
   });
   footerOurOfficeButton.addEventListener('click', () => {
     handlerFooterSection(footerOurOfficeList, 'our-office', footerOurOfficeButton, footerOurOfficeSvgPlus, footerOurOfficeSvgMinus);

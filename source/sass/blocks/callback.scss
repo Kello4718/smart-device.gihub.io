@@ -4,8 +4,7 @@
   color: #ffffff;
   background: #00B2FF url('../img/callback-background-desktop.png') no-repeat;
 
-  padding: 91px 0 103px;
-  box-sizing: border-box;
+  padding: 91px 0 104px;
 
   @include retina {
     background: #00B2FF url('../img/callback-background-desktop@2x.png') no-repeat;
@@ -14,7 +13,7 @@
   @include tablet {
     background: #00B2FF;
 
-    padding: 80px 87px 96px 92px;
+    padding: 80px 87px 95px 92px;
   }
 
   @include mobile {
@@ -23,15 +22,19 @@
 }
 
 .callback__wrapper {
-  width: 570px;
+  width: 100%;
+  max-width: 1369px;
 
   display: block;
 
-  padding: 0 19.53% 0 0;
-  margin: 0 0 0 auto;
+  //padding: 0 19.53% 0 0;
+  //margin: 0 0 0 auto;
+  padding: 0 100px;
+  margin: 0 auto 0;
 
   @include tablet {
     width: 100%;
+    max-width: none;
 
     margin: 0;
     padding: 0;
@@ -39,10 +42,12 @@
 }
 
 .callback__wrapper h2 {
+  width: 570px;
+
   font-size: 36px;
   line-height: 50.63px;
 
-  margin: 0 0 10px;
+  margin: 0 0 11px auto;
 
   @include tablet {
     font-size: 32px;
@@ -52,6 +57,8 @@
   }
 
   @include mobile {
+    width: 100%;
+
     font-size: 28px;
     line-height: 39.38px;
 
@@ -60,30 +67,46 @@
 }
 
 .callback__wrapper p {
+  width: 570px;
+
   font-family: "PTMono", "Arial", sans-serif;
   font-size: 16px;
   line-height: 21.5px;
   font-weight: 400;
 
-  margin: 0 0 51px;
+  padding: 0 0 0 4px;
+  margin: 0 0 51px auto;
 
   @include tablet {
     margin: 0 0 54px;
   }
 
   @include mobile {
+    width: 100%;
+    
     margin: 0 0 26px;
   }
 }
 
 .callback__wrapper form {
   width: 100%;
+  max-width: 570px;
 
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
 
   background: #00B2FF;
+
+  //padding: 0 0 0 4px;
+  margin: 0 0 0 auto;
+
+  @include tablet {
+    max-width: none;
+
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .callback__wrapper label {
@@ -115,8 +138,7 @@
   color: #ffffff;
   background: #{'hsla(0 0% 100% / 10%)'};
 
-  padding: 14px 16px;
-  box-sizing: border-box;
+  padding: 0 17px;
 
   @include tablet {
     height: 51.83px;
@@ -148,9 +170,8 @@
   color: #ffffff;
   background: #{'hsla(0 0% 100% / 10%)'};
 
-  padding: 13px 16px;
+  padding: 11px 17px;
   margin: 0 0 43px;
-  box-sizing: border-box;
 
   @include tablet {
     height: 159px;
@@ -215,7 +236,6 @@
   background: transparent;
 
   padding: 0;
-  box-sizing: border-box;
 
   &:hover {
     box-shadow: 0 0 10px 5px currentColor;
@@ -285,7 +305,6 @@
     left: -31px;
 
     border: 1px solid #ffffff;
-    box-sizing: border-box;
   }
 
   &::after {

@@ -57,31 +57,33 @@
 
 .footer__wrapper {
   width: 100%;
-  max-width: 1412px;
+  max-width: 1476px;
 
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 40% 1fr;
 
   position: relative;
 
   color: #1B2D37;
 
-  padding: 65px 0 14px;
+  padding: 65px 30px 14px;
   margin: 0 auto;
-  box-sizing: border-box;
 
   @include tablet {
-    padding: 18px 24px 24px 25px;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 20px 24px 24px 25px;
   }
 
   @include mobile {
+    grid-template-columns: 1fr;
+
     padding: 46px 0 0;
   }
 }
 
 .footer__social {
-  width: 216px;
+  //width: 216px;
 
   display: flex;
   flex-flow: column;
@@ -89,12 +91,13 @@
   @include tablet {
     width: 100%;
 
+    grid-column: 1 / -1;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
 
     padding: 0 0 28px;
-    margin: 0 0 38px;
+    margin: 0 0 35px;
   }
 
   @include mobile {
@@ -131,6 +134,8 @@
     letter-spacing: 4%;
 
     display: inherit;
+
+    opacity: 50%;
   }
 
   @include mobile {
@@ -167,7 +172,7 @@
 }
 
 .footer__sections {
-  width: 457px;
+  //width: 452px;
 
   display: flex;
   flex-flow: row wrap;
@@ -180,6 +185,8 @@
 
   @include mobile {
     width: 100%;
+
+    grid-column: 1 / -1;
 
     border-bottom: 1px solid #626962;
 
@@ -214,7 +221,7 @@
 }
 
 .footer__sections-list {
-  width: 100%;
+  width: 84%;
   height: 100px;
 
   font-family: "PTMono", "Arial", sans-serif;
@@ -225,12 +232,22 @@
 
   display: flex;
   flex-flow: column wrap;
+  gap: 0 20px;
 
   padding: 0;
   margin: 0;
 
   @include tablet {
     height: auto;
+  }
+}
+
+.footer__sections-list li {
+  width: max-content;
+  //margin: 0 16% 0 0;
+
+  @include tablet {
+    margin: 0;
   }
 }
 
@@ -243,21 +260,27 @@
 
   color: #1B2D37;
 
+  //margin: 0 10px 0 0;
+
   &:hover {
     color: deepskyblue;
   }
 }
 
 .footer__our-office {
-  width: 335px;
+  //width: 335px;
 
   display: flex;
   flex-flow: row wrap;
+
+  padding: 0 0 0 21%;
 
   @include tablet {
     width: 345px;
 
     flex-flow: column;
+
+    padding: 0 0 0 4%;
   }
 
   @include mobile {
@@ -375,6 +398,8 @@
   text-transform: uppercase;
   list-style: none;
   letter-spacing: 0.04em;
+
+  grid-column: 1 / -1;
 
   display: flex;
   flex-flow: row wrap;

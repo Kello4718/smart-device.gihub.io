@@ -1,16 +1,9 @@
 .company {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1230px;
 
-  background: url('../img/company-background-desktop.png') no-repeat -295px -28px;
-
-  padding: 109px 0 112px;
+  padding: 109px 30px 111px;
   margin: 0 auto;
-  box-sizing: border-box;
-
-  @include retina {
-    background: url('../img/company-background-desktop@2x.png') no-repeat -295px -28px;
-  }
 
   @include tablet {
     padding: 54px 24px 83px;
@@ -35,7 +28,7 @@
   background: white;
 
   padding: 0;
-  margin: 0 0 107px;
+  margin: 0 0 110px;
 
   @include tablet {
 
@@ -67,7 +60,6 @@
   border: 1px solid #EBEBEB;
 
   padding: 40px 45px 49px;
-  box-sizing: border-box;
 
   cursor: pointer;
 
@@ -89,7 +81,6 @@
     height: auto;
 
     padding: 24px 27px 49px;
-    box-sizing: border-box;
   }
 
   @include mobile {
@@ -212,7 +203,7 @@
   font-size: 36px;
   line-height: 50.63px;
 
-  margin: 0 0 23px;
+  margin: 0 0 20px;
 
   @include tablet {
     font-size: 32px;
@@ -232,7 +223,7 @@
   line-height: 21.5px;
   font-weight: 400;
 
-  margin: 0 0 38px;
+  margin: 0 0 39px;
 
   @include tablet {
     display: none;
@@ -277,7 +268,6 @@
   border-radius: 5px;
 
   padding: 14px 0 8px;
-  box-sizing: border-box;
 
   &:hover {
     box-shadow: 0 0 10px 5px currentColor;

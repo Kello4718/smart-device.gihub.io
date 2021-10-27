@@ -18,6 +18,12 @@
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 .body {
   height: 100%;
 
@@ -29,6 +35,12 @@
 
 .main {
   flex: 1 0 auto;
+
+  background: url('../img/company-background-desktop.png') no-repeat -295px -28px;
+
+  @include retina {
+    background: url('../img/company-background-desktop@2x.png') no-repeat -295px -28px;
+  }
 }
 
 .visually-hidden {

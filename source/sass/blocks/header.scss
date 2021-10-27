@@ -1,25 +1,25 @@
 .header {
   color: white;
-  background: url('../img/printed-circuit-board-desktop.png') no-repeat 85.6% 259px, #1B2D37 url('../img/header-background-desktop.png') no-repeat 0 -59px;
+  background: url('../img/printed-circuit-board-desktop.png') no-repeat 85.4% 259px, url('../img/header-figure.svg') no-repeat 82.5% 118px, #1B2D37 url('../img/header-background-desktop.png') no-repeat 0 0 / cover;
 
   @include retina {
-    background: url('../img/printed-circuit-board-desktop.png') no-repeat 85.6% 259px, #1B2D37 url('../img/header-background-desktop@2x.png') no-repeat 0 -59px;
+    background: url('../img/printed-circuit-board-desktop.png') no-repeat 85.4% 259px, url('../img/header-figure.svg') no-repeat 82.5% 118px, #1B2D37 url('../img/header-background-desktop@2x.png') no-repeat 0 0 / cover;
   }
 
   @include tablet {
-    background: url('../img/printed-circuit-board-tablet.png') no-repeat 100% 113px, url('../img/header-background-tablet.png') no-repeat 0 -6px / cover;
+    background: url('../img/printed-circuit-board-tablet.png') no-repeat 100% 112px, url('../img/header-figure.svg') no-repeat 183.5% -22.2% / 530px 505px, #1B2D37 url('../img/header-background-tablet.png') no-repeat 0 0 / cover;
 
-    @include retina {
-      background: url('../img/printed-circuit-board-tablet@2x.png') no-repeat 100% 113px, url('../img/header-background-tablet@2x.png') no-repeat 0 -6px / cover;
-    }
+  @include retina {
+    background: url('../img/printed-circuit-board-tablet.png') no-repeat 100% 112px, url('../img/header-figure.svg') no-repeat 183.5% -22.2% / 530px 505px, #1B2D37 url('../img/header-background-tablet@2x.png') no-repeat 0 0 / cover;
+  }
   }
 
   @include mobile {
-    background: url('../img/printed-circuit-board-mobile.png') no-repeat 100% 91px, url('../img/header-background-mobile.png') no-repeat 0 0 / cover;
+    background: url('../img/printed-circuit-board-mobile.png') no-repeat 100% 92px, url('../img/header-figure.svg') no-repeat 153px -46px / 500px 483px, #1B2D37 url('../img/header-background-mobile.png') no-repeat 0 0 / cover;
 
-    @include retina {
-      background: url('../img/printed-circuit-board-mobile.png') no-repeat 100% 91px, url('../img/header-background-mobile@2x.png') no-repeat 0 0 / cover;
-    }
+  @include retina {
+    background: url('../img/printed-circuit-board-mobile.png') no-repeat 100% 92px, url('../img/header-figure.svg') no-repeat 153px -46px / 500px 483px, #1B2D37 url('../img/header-background-mobile@2x.png') no-repeat 0 0 / cover;
+  }
   }
 }
 
@@ -27,10 +27,9 @@
   width: 100%;
   max-width: 1920px;
 
-  padding: 33px 0 274px;
+  padding: 33px 0 275px;
 
   margin: 0 auto;
-  box-sizing: border-box;
 
   @include tablet {
     padding: 20px 25px 163px;
@@ -45,22 +44,24 @@
 
 .header__info {
   width: 100%;
-  max-width: 1410px;
+  max-width: 1470px;
 
   display: flex;
   align-items: center;
 
-  padding: 0;
-  margin: 0 auto 174px;
+  padding: 0 30px;
+  margin: 0 auto 230px;
 
   @include tablet {
     width: 100%;
+    max-width: none;
 
-    margin: 0 0 117px;
+    padding: 0;
+    margin: 0 0 116px;
   }
 
   @include mobile {
-    margin: 0 0 262px;
+    margin: 0 0 231px;
   }
 }
 
@@ -150,7 +151,7 @@
 }
 
 .header__info-phone {
-  width: 216px;
+  width: 207px;
 
   display: flex;
   justify-content: space-between;
@@ -170,13 +171,9 @@
   width: 18px;
   height: 18px;
 
-  margin: 0 16px 0 0;
-
   @include tablet {
     width: 22.54px;
     height: 22.61px;
-
-    margin: 0;
   }
 }
 
@@ -195,7 +192,6 @@
   min-height: 45px;
 
   font-family: "RobotoCondensed", "Arial", sans-serif;
-  font-size: 14px;
   line-height: 16.41px;
   font-weight: 700;
   letter-spacing: 5%;
@@ -205,9 +201,9 @@
   border: 1px solid  #ffffff;
   border-radius: 5px;
 
-  padding: 12px 0 8px;
-  margin:  0 0 0 42px;
-  box-sizing: border-box;
+  padding: 13px 0 8px;
+  //margin:  1px 0 0 42px;
+  margin: 0 0 0 50px;
 
   @include tablet {
     display: none;
@@ -219,17 +215,19 @@
 }
 
 .header__main {
-  width: 100%;
+  width: 74%;
 
   display: flex;
 
-  box-sizing: border-box;
+  margin: 0 auto;
 
   @include tablet {
-    padding: 0 0 0 8.8%;
+    width: 82.6%;
   }
 
   @include mobile {
+    width: 100%;
+    
     flex-flow: column-reverse;
 
     padding: 0;
@@ -238,10 +236,10 @@
 }
 
 .header__main-info {
-  width: 39.4%;
+  width: 100%;
 
-  padding: 57px 0 0 249px;
-  margin: 0 1.7% 0 0;
+  //padding: 56px 0 0 249px;
+  //margin: 0 1.7% 0 0;
 
   @include tablet {
     width: 100%;
@@ -254,7 +252,7 @@
     width: 100%;
 
     padding: 0 0 0 2px;
-    margin: -30px auto 0 0;
+    margin: 0 auto 0 0;
   }
 }
 
@@ -262,7 +260,7 @@
   font-size: 80px;
   line-height: 93.75px;
   font-weight: 700;
-  letter-spacing: .07em;
+  letter-spacing: .072em;
   text-transform: uppercase;
 
   display: block;
@@ -274,9 +272,13 @@
 
     font-size: 60px;
     line-height: 70.31px;
+
+    margin: 0 0 28px;
   }
 
   @include mobile {
+    width: 100%;
+
     font-size: 40px;
     line-height: 46.88px;
 
@@ -285,6 +287,8 @@
 }
 
 .header__main-info p {
+  width: 100%;
+  max-width: 700px;
   font-family: "PTMono", "Arial", sans-serif;
   font-size: 22px;
   line-height: 34.5px;
@@ -294,7 +298,6 @@
 
   padding: 0 0 0 98px;
   margin: 0 0 43px;
-  box-sizing: border-box;
 
   &::before {
     content: '';
@@ -303,14 +306,14 @@
     height: 2px;
 
     position: absolute;
-    top: 16px;
+    top: 17px;
     left: 4px;
 
     background: white;
   }
 
   @include tablet {
-    width: 60%;
+    width: 66%;
 
     font-size: 18px;
     line-height: 28.22px;
@@ -321,6 +324,7 @@
     &::before {
       width: 33px;
 
+      top: 16px;
       left: 3px;
     }
   }
@@ -331,7 +335,7 @@
     font-size: 16px;
     line-height: 25.09px;
 
-    margin: 0 0 41px;
+    margin: 0 0 42px;
 
     &::before {
       width: 33px;
@@ -361,7 +365,6 @@
 
   padding: 17px 0 14px;
   margin: 0 0 0 98px;
-  box-sizing: border-box;
 
   @include tablet {
     width: 379px;
@@ -400,7 +403,6 @@
 
     padding: 17px 0 14px;
     margin: 0 0 0 3px;
-    box-sizing: border-box;
   }
 }
 
