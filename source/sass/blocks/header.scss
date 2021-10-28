@@ -1,25 +1,25 @@
 .header {
   color: white;
-  background: url('../img/printed-circuit-board-desktop.png') no-repeat 85.4% 259px, url('../img/header-figure.svg') no-repeat 82.5% 118px, #1B2D37 url('../img/header-background-desktop.png') no-repeat 0 0 / cover;
+  background: url('../img/printed-circuit-board-desktop.png') no-repeat 1037px 259px / 705px 515px, url('../img/header-figure.svg') no-repeat 82.5% 118px, #1B2D37 url('../img/header-background-desktop.png') no-repeat 0 0 / cover;
 
   @include retina {
-    background: url('../img/printed-circuit-board-desktop.png') no-repeat 85.4% 259px, url('../img/header-figure.svg') no-repeat 82.5% 118px, #1B2D37 url('../img/header-background-desktop@2x.png') no-repeat 0 0 / cover;
+    background: url('../img/printed-circuit-board-desktop.png') no-repeat 1037px 259px / 705px 515px, url('../img/header-figure.svg') no-repeat 82.5% 118px, #1B2D37 url('../img/header-background-desktop@2x.png') no-repeat 0 0 / cover;
   }
 
   @include tablet {
     background: url('../img/printed-circuit-board-tablet.png') no-repeat 100% 112px, url('../img/header-figure.svg') no-repeat 183.5% -22.2% / 530px 505px, #1B2D37 url('../img/header-background-tablet.png') no-repeat 0 0 / cover;
 
-  @include retina {
-    background: url('../img/printed-circuit-board-tablet.png') no-repeat 100% 112px, url('../img/header-figure.svg') no-repeat 183.5% -22.2% / 530px 505px, #1B2D37 url('../img/header-background-tablet@2x.png') no-repeat 0 0 / cover;
-  }
+    @include retina {
+      background: url('../img/printed-circuit-board-tablet.png') no-repeat 100% 112px, url('../img/header-figure.svg') no-repeat 183.5% -22.2% / 530px 505px, #1B2D37 url('../img/header-background-tablet@2x.png') no-repeat 0 0 / cover;
+    }
   }
 
   @include mobile {
     background: url('../img/printed-circuit-board-mobile.png') no-repeat 100% 92px, url('../img/header-figure.svg') no-repeat 153px -46px / 500px 483px, #1B2D37 url('../img/header-background-mobile.png') no-repeat 0 0 / cover;
 
-  @include retina {
-    background: url('../img/printed-circuit-board-mobile.png') no-repeat 100% 92px, url('../img/header-figure.svg') no-repeat 153px -46px / 500px 483px, #1B2D37 url('../img/header-background-mobile@2x.png') no-repeat 0 0 / cover;
-  }
+    @include retina {
+      background: url('../img/printed-circuit-board-mobile.png') no-repeat 100% 92px, url('../img/header-figure.svg') no-repeat 153px -46px / 500px 483px, #1B2D37 url('../img/header-background-mobile@2x.png') no-repeat 0 0 / cover;
+    }
   }
 }
 
@@ -82,7 +82,7 @@
 
   @include mobile {
     display: inherit;
-    width: 38px;
+    width: 42px;
     height: 38px;
 
     padding: 0 0 0 4px;
@@ -91,7 +91,7 @@
 }
 
 .header__info-contacts {
-  width: 67%;
+  width: 70%;
 
   font-family: "PTMono", "Arial", sans-serif;
   font-size: 16px;
@@ -99,11 +99,12 @@
 
   display: flex;
   justify-content: flex-end;
+  flex-flow: row wrap;
 
   margin: 0;
 
   @include tablet {
-    width: 60px;
+    width: 82px;
   }
 }
 
@@ -130,13 +131,18 @@
 
 .header__info-email svg {
   width: 19px;
-  height: 14px;
+  height: 17px;
 
   margin: 0;
 
   @include tablet {
     width: 25.33px;
     height: 18.67px;
+  }
+
+  @include mobile {
+    width: 25px;
+    height: 19px;
   }
 }
 
@@ -151,7 +157,7 @@
 }
 
 .header__info-phone {
-  width: 207px;
+  width: 210px;
 
   display: flex;
   justify-content: space-between;
@@ -182,6 +188,8 @@
 }
 
 .header__info-phone span {
+  width: 180px;
+
   @include tablet {
     display: none;
   }
@@ -202,8 +210,7 @@
   border-radius: 5px;
 
   padding: 13px 0 8px;
-  //margin:  1px 0 0 42px;
-  margin: 0 0 0 50px;
+  margin: 0 0 0 47px;
 
   @include tablet {
     display: none;
@@ -227,7 +234,7 @@
 
   @include mobile {
     width: 100%;
-    
+
     flex-flow: column-reverse;
 
     padding: 0;
@@ -237,9 +244,6 @@
 
 .header__main-info {
   width: 100%;
-
-  //padding: 56px 0 0 249px;
-  //margin: 0 1.7% 0 0;
 
   @include tablet {
     width: 100%;
@@ -282,7 +286,7 @@
     font-size: 40px;
     line-height: 46.88px;
 
-    margin: 0 0 25px;
+    margin: 0 0 26px;
   }
 }
 
@@ -324,7 +328,7 @@
     &::before {
       width: 33px;
 
-      top: 16px;
+      top: 17px;
       left: 3px;
     }
   }
@@ -335,12 +339,12 @@
     font-size: 16px;
     line-height: 25.09px;
 
-    margin: 0 0 42px;
+    margin: 0 0 41px;
 
     &::before {
       width: 33px;
 
-      top: 17px;
+      top: 16px;
       left: 3px;
     }
   }
@@ -353,7 +357,7 @@
   font-size: 16px;
   line-height: 18.75px;
   font-weight: 700;
-  letter-spacing: 5%;
+  letter-spacing: 0.04em;
   text-align: center;
   text-transform: uppercase;
 

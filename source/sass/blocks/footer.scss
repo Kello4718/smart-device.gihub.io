@@ -3,6 +3,8 @@
 
   position: relative;
 
+  background: #FAFAFA;
+
   &::before {
     content: '';
 
@@ -24,7 +26,7 @@
       height: 1px;
 
       position: absolute;
-      top: 388px;
+      top: 387px;
       left: 0;
 
       background: #626962;
@@ -37,7 +39,7 @@
       height: 1px;
 
       position: absolute;
-      top: 97px;
+      top: 96px;
       left: 0;
 
       background: #626962;
@@ -83,8 +85,6 @@
 }
 
 .footer__social {
-  //width: 216px;
-
   display: flex;
   flex-flow: column;
 
@@ -96,15 +96,11 @@
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 0 28px;
-    margin: 0 0 35px;
+    margin: 0 0 63px;
   }
 
   @include mobile {
-    border-bottom: 1px solid #626962;
-
-    padding: 0 0 50px;
-    margin: 0 0 29px;
+    margin: 0 0 50px;
   }
 }
 
@@ -131,7 +127,8 @@
     font-size: 13px;
     line-height: 24px;
     font-weight: 400;
-    letter-spacing: 4%;
+
+    text-transform: uppercase;
 
     display: inherit;
 
@@ -154,6 +151,7 @@
 
   display: flex;
   justify-content: space-between;
+  flex-flow: row wrap;
 
   @include mobile {
     margin: 0 auto;
@@ -172,10 +170,10 @@
 }
 
 .footer__sections {
-  //width: 452px;
-
   display: flex;
   flex-flow: row wrap;
+
+  position: relative;
 
   color: #1B2D37;
 
@@ -188,10 +186,8 @@
 
     grid-column: 1 / -1;
 
+    border-top: 1px solid #626962;;
     border-bottom: 1px solid #626962;
-
-    padding: 0 15px 28px;
-    margin: 0 0 27px;
   }
 }
 
@@ -200,7 +196,6 @@
 
   font-size: 15px;
   line-height: 16px;
-  letter-spacing: 5%;
   text-transform: uppercase;
   text-align: start;
 
@@ -212,11 +207,18 @@
 
   border: none;
 
-  padding: 0;
+  padding: 0 0 0 1.5px;
   margin: 0 0 24px;
 
+  @include tablet {
+    letter-spacing: .06em;
+
+    margin: 0 0 25px;
+  }
+
   @include mobile {
-    margin: 0 0 32px;
+    padding: 29px 15px 28px;
+    margin: 0;
   }
 }
 
@@ -237,14 +239,21 @@
   padding: 0;
   margin: 0;
 
+  opacity: 50%;
+
   @include tablet {
     height: auto;
+  }
+
+  @include mobile {
+    width: 100%;
+
+    padding: 0 15px;
   }
 }
 
 .footer__sections-list li {
   width: max-content;
-  //margin: 0 16% 0 0;
 
   @include tablet {
     margin: 0;
@@ -260,16 +269,16 @@
 
   color: #1B2D37;
 
-  //margin: 0 10px 0 0;
-
   &:hover {
     color: deepskyblue;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
 .footer__our-office {
-  //width: 335px;
-
   display: flex;
   flex-flow: row wrap;
 
@@ -287,8 +296,8 @@
     width: 100%;
 
     border-bottom: 1px solid #626962;
-
-    padding: 0 15px 27px;
+    
+    padding: 0;
   }
 }
 
@@ -315,12 +324,16 @@
   @include tablet {
     height: max-content;
 
-    margin: 0 0 24px;
+    letter-spacing: .08em;
+
+    padding: 0 0 0 2px;
+    margin: 0 0 25px;
   }
 
   @include mobile {
-    height: max-content;
+    height: auto;
 
+    padding: 27px 15px 27px;
     margin: 0;
   }
 }
@@ -371,8 +384,12 @@
   padding: 0;
   margin: 0;
 
+  opacity: 50%;
+
   @include mobile {
     width: 100%;
+
+    padding: 0 15px;
   }
 }
 
@@ -405,6 +422,8 @@
   flex-flow: row wrap;
 
   margin: 73px 0 0;
+
+  opacity: 50%;
 
   @include tablet {
     font-size: 13px;

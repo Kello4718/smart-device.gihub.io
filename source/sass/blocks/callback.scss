@@ -2,34 +2,30 @@
   width: 100%;
 
   color: #ffffff;
-  background: #00B2FF url('../img/callback-background-desktop.png') no-repeat;
+  background: #00B2FF url('../img/callback-figure.svg') no-repeat 100% -1px;
 
-  padding: 91px 0 104px;
-
-  @include retina {
-    background: #00B2FF url('../img/callback-background-desktop@2x.png') no-repeat;
-  }
+  padding: 91px 30px 102px;
 
   @include tablet {
     background: #00B2FF;
 
-    padding: 80px 87px 95px 92px;
+    padding: 80px 87px 94px 88px;
   }
 
   @include mobile {
-    padding: 29px 15px 27px;
+    padding: 30px 15px 27px;
   }
 }
 
 .callback__wrapper {
   width: 100%;
-  max-width: 1369px;
+  max-width: 1220px;
 
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  //padding: 0 19.53% 0 0;
-  //margin: 0 0 0 auto;
-  padding: 0 100px;
+  //padding: 0 100px;
   margin: 0 auto 0;
 
   @include tablet {
@@ -41,13 +37,38 @@
   }
 }
 
-.callback__wrapper h2 {
+.callback__wrapper picture {
+  padding: 0 0 45px 0;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.callback__wrapper img {
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.callback__wrapper-content {
+  background: #00B2FF;
+
+  padding: 0 28px 0 20px;
+
+  @include tablet {
+    padding: 0;
+  }
+}
+
+.callback__wrapper-content h2 {
   width: 570px;
 
   font-size: 36px;
-  line-height: 50.63px;
+  line-height: 51px;
 
-  margin: 0 0 11px auto;
+  margin: 0 0 9px auto;
 
   @include tablet {
     font-size: 32px;
@@ -60,13 +81,13 @@
     width: 100%;
 
     font-size: 28px;
-    line-height: 39.38px;
+    line-height: 39px;
 
-    margin: 0 0 14px;
+    margin: 0 0 13.5px;
   }
 }
 
-.callback__wrapper p {
+.callback__wrapper-content p {
   width: 570px;
 
   font-family: "PTMono", "Arial", sans-serif;
@@ -78,17 +99,19 @@
   margin: 0 0 51px auto;
 
   @include tablet {
+    padding: 0 0 0 5px;
     margin: 0 0 54px;
   }
 
   @include mobile {
     width: 100%;
-    
+
+    padding: 0;
     margin: 0 0 26px;
   }
 }
 
-.callback__wrapper form {
+.callback__wrapper-content form {
   width: 100%;
   max-width: 570px;
 
@@ -96,20 +119,22 @@
   justify-content: space-between;
   flex-flow: row wrap;
 
-  background: #00B2FF;
-
-  //padding: 0 0 0 4px;
+  padding: 0 0 0 4px;
   margin: 0 0 0 auto;
 
   @include tablet {
     max-width: none;
 
-    padding: 0;
+    padding: 0 0 0 5px;
     margin: 0;
+  }
+
+  @include mobile {
+    padding: 0;
   }
 }
 
-.callback__wrapper label {
+.callback__wrapper-content label {
   width: 270px;
   height: 50px;
 
@@ -129,7 +154,7 @@
   }
 }
 
-.callback__wrapper input {
+.callback__wrapper-content input {
   width: 100%;
   height: 50px;
 
@@ -145,7 +170,7 @@
 
     font-family: "PTMono", "Arial", sans-serif;
 
-    padding: 11px 16px 14px 20px;
+    padding: 9px 16px 14px 16.5px;
   }
 
   @include mobile {
@@ -155,9 +180,17 @@
   &:hover {
     box-shadow: 0 0 10px 5px currentColor;
   }
+
+  &::placeholder {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 22px;
+
+    color: #ffffff;
+  }
 }
 
-.callback__wrapper textarea {
+.callback__wrapper-content textarea {
   width: 100%;
   height: auto;
   min-height: 154px;
@@ -170,8 +203,10 @@
   color: #ffffff;
   background: #{'hsla(0 0% 100% / 10%)'};
 
-  padding: 11px 17px;
+  padding: 12px 17px;
   margin: 0 0 43px;
+
+  resize: none;
 
   @include tablet {
     height: 159px;
@@ -194,12 +229,14 @@
     font-family: inherit;
     font-size: 16px;
     line-height: 21.5px;
+
+    color: #ffffff;
   }
 }
 
 .callback__button-wrapper {
   width: 270px;
-  height: 45px;
+  height: 46.5px;
 
   display: inherit;
 
@@ -212,7 +249,7 @@
   @include mobile {
     width: 100%;
 
-    margin: 0 0 30.35px;
+    margin: 0 0 29px;
   }
 }
 
@@ -237,6 +274,8 @@
 
   padding: 0;
 
+  cursor: pointer;
+
   &:hover {
     box-shadow: 0 0 10px 5px currentColor;
   }
@@ -244,13 +283,14 @@
 
 .callback__checkbox-wrapper {
   width: 262px;
+  //width: 100%;
+
+  display: flex;
 
   padding: 7px 0 0;
 
   @include tablet {
     width: 271px;
-
-    padding: 6px 0 0;
   }
 
   @include mobile {
@@ -259,7 +299,14 @@
 }
 
 .callback__checkbox-wrapper label {
-  padding: 0 0 0 31px;
+  width: 100%;
+
+  padding: 0 0 0 34px;
+  margin: 0;
+
+  @include tablet {
+    padding: 0 0 0 33px;
+  }
 }
 
 .callback__checkbox-wrapper input {
@@ -269,7 +316,7 @@
   position: absolute;
   background: transparent;
 
-  margin: 0 0 0 -31px;
+  margin: 0;
 
   appearance: none;
 
@@ -283,12 +330,14 @@
 }
 
 .callback__checkbox-wrapper span {
+  height: 100%;
+
   font-family: "PTMono", "Arial", sans-serif;
   font-size: 14px;
-  line-height: 15.68px;
+  line-height: 16px;
   font-weight: 400;
 
-  display: inline-block;
+  display: block;
 
   position: relative;
 
@@ -302,9 +351,15 @@
 
     position: absolute;
     top: 2px;
-    left: -31px;
+    left: -33.5px;
 
     border: 1px solid #ffffff;
+
+    cursor: pointer;
+
+    @include tablet {
+      left: -33px;
+    }
   }
 
   &::after {
@@ -316,12 +371,14 @@
     display: none;
 
     position: absolute;
-    top: 8px;
-    left: -27px;
+    top: 7px;
+    left: -29px;
 
     background: transparent url('../img/checkbox-checked.svg');
 
     margin: auto;
+
+    cursor: pointer;
   }
 }
 

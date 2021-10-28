@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1230px;
 
-  padding: 109px 30px 111px;
+  padding: 112px 30px 111px;
   margin: 0 auto;
 
   @include tablet {
@@ -10,7 +10,7 @@
   }
 
   @include mobile {
-    padding: 36px 13px 65px;
+    padding: 36px 10px 66px;
   }
 }
 
@@ -28,7 +28,7 @@
   background: white;
 
   padding: 0;
-  margin: 0 0 110px;
+  margin: 0 0 105px;
 
   @include tablet {
 
@@ -47,26 +47,25 @@
     grid-template-rows: 310px 310px 232px 244px;
     gap: 20px 0;
 
-    margin: 0 0 55px;
+    padding: 0 0 0 3px;
+    margin: 0 0 58px;
   }
 }
 
 .company li {
   width: 100%;
-  height: 299px;
+  min-height: 299px;
 
   position: relative;
 
   border: 1px solid #EBEBEB;
 
-  padding: 40px 45px 49px;
-
-  cursor: pointer;
+  padding: 40px 25px 49px 43px;
 
   &::before {
     content: '';
 
-    width: 3px;
+    width: 2px;
     height: 100%;
 
     position: absolute;
@@ -79,12 +78,19 @@
   @include tablet {
     width: 100%;
     height: auto;
+    min-height: 232px;
 
-    padding: 24px 27px 49px;
+    padding: 24px 18px 49px 27px;
   }
 
   @include mobile {
-    padding: 25px 28px 49px;
+    padding: 25px 9px 49px 27px;
+  }
+}
+
+.company li:nth-child(3n + 2) {
+  @include mobile {
+    padding: 25px 8px 49px 27px;
   }
 }
 
@@ -97,35 +103,69 @@
 }
 
 .company svg {
-  margin: 0 0 18px;
+  margin: 0 0 15px;
 
   @include tablet {
     margin: 0 0 3px;
   }
 
   @include mobile {
-    margin: 0 0 6px;
+    margin: 0 0 9px;
   }
 }
 
-.company li:first-child svg {
+.company li:nth-child(4n + 1) svg {
   width: 29px;
   height: 35px;
+
+  @include tablet {
+    width: 31px;
+    height: 35px;
+  }
 }
 
-.company li:nth-child(3n + 2) svg {
+.company li:nth-child(4n + 2) svg {
   width: 35px;
   height: 35px;
+
+  @include tablet {
+    width: 32px;
+    height: 31px;
+
+    margin: 0 0 7px;
+  }
+
+  @include mobile {
+    margin: 0 0 9px;
+  }
 }
 
-.company li:nth-child(3n + 3) svg {
-  width: 36px;
-  height: 31px;
+.company li:nth-child(4n + 3) svg {
+  width: 35px;
+  height: 29px;
+
+  @include tablet {
+    width: 31px;
+    height: 30px;
+
+    margin: 0 0 5px;
+  }
 }
 
-.company li:last-child svg {
+.company li:nth-child(4n +4) svg {
   width: 35px;
   height: 35px;
+
+  @include tablet {
+    width: 34px;
+    height: 31px;
+
+    margin: 0 0 7px;
+  }
+
+  @include mobile {
+    margin: 0 0 9px;
+  }
 }
 
 .company p {
@@ -143,6 +183,28 @@
   @include mobile {
     font-size: 20px;
     line-height: 28.13px;
+  }
+}
+
+.company li:nth-child(4n + 1) p {
+  @include tablet {
+    margin: 0 0 10px;
+  }
+}
+
+.company li:nth-child(4n + 3) p {
+  @include tablet {
+    margin: 0 0 16px;
+  }
+}
+
+.company li:nth-child(4n + 4) p {
+  @include tablet {
+    margin: 0 0 8px;
+  }
+
+  @include mobile {
+    margin: 0 0 18px;
   }
 }
 
@@ -167,7 +229,7 @@
   color: #666666;
 
   @include tablet {
-    padding: 0 0 0 189px;
+    padding: 0 0 0 186px;
   }
   @include mobile {
     padding: 0 0 0 4px;
@@ -179,14 +241,14 @@
   height: 317px;
 
   position: absolute;
-  top: 3px;
+  top: 5px;
   left: -30px;
 
   @include tablet {
     width: 251.08px;
     height: 361.79px;
 
-    top: 0;
+    top: -1px;
     left: -27px;
   }
 
@@ -213,39 +275,73 @@
   }
 
   @include mobile {
-    margin: 0 0 17px;
+    font-size: 28px;
+    line-height: 39.38px;
+
+    margin: 0 0 20px;
   }
 }
 
+
+
 .company__about-main p {
+  width: 100%;
+
   font-family: "PTMono", "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 21.5px;
+  font-size: 15px;
+  line-height: 22px;
+
+  display: none;
+
   font-weight: 400;
 
-  margin: 0 0 39px;
+  color: inherit;
+
+  margin: 0 0 41px;
+
+  @include tablet {
+    width: 94%;
+
+    display: inherit;
+
+    padding: 0 0 0 3px;
+    margin: 0 0 19px;
+  }
+
+  @include mobile {
+    margin: 0 0 41px;
+  }
+}
+
+.company__about-main p + p {
+  margin: 0 0 29px;
+
+  @include tablet {
+    margin: 0 0 42px;
+  }
+
+  @include mobile {
+    margin: 0 0 27px;
+  }
+}
+
+.company__about-main-desktop-text p {
+  display: block;
+
+  margin: 0 0 22px;
 
   @include tablet {
     display: none;
   }
 }
 
-.company__about-main-tablet-text p {
-  display: none;
+.company__about-main-desktop-text p + p {
+  display: block;
+
+  margin: 0 0 38px;
 
   @include tablet {
-    font-family: "PTMono", "Arial", sans-serif;
-    font-size: 16px;
-    line-height: 21.5px;
-    font-weight: 400;
-
-    display: block;
-
-    margin: 0 0 43px;
-  }
-
-  @include mobile {
-    margin: 0 0 33px;
+    display: none;
   }
 }
 
@@ -268,15 +364,20 @@
   border-radius: 5px;
 
   padding: 14px 0 8px;
+  margin: 0;
 
   &:hover {
     box-shadow: 0 0 10px 5px currentColor;
   }
+
+  @include tablet {
+    margin: 0 0 0 3px;
+  }
 }
 
 .company li:hover,
-.company li:hover h3,
 .company li:hover p,
+.company li:hover span,
 .company li:hover path {
   color: #ffffff;
   fill: #ffffff;

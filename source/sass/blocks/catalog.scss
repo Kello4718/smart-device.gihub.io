@@ -8,15 +8,15 @@
 .catalog__wrapper {
   max-width: 1440px;
 
-  padding: 88px 30px 124px;
+  padding: 88px 30px 125px;
   margin: 0 auto;
 
   @include tablet {
-    padding: 50px 25px 71px;
+    padding: 49px 25px 75px;
   }
 
   @include mobile {
-    padding: 50px 15px 64px;
+    padding: 50px 15px 63.4px;
   }
 }
 
@@ -36,7 +36,7 @@
     font-size: 32px;
     line-height: 45px;
 
-    margin: 0 0 49px;
+    margin: 0 0 50px;
   }
 
   @include mobile {
@@ -64,9 +64,8 @@
   margin: 0 auto;
 
   @include tablet {
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: none;
-    gap: 42px 0;
+    grid-template-columns: 1fr;
+    gap: 41px 0;
   }
 
   @include mobile {
@@ -122,6 +121,7 @@
 
   @include mobile {
     min-width: 290px;
+    height: 256px;
     min-height: 256px;
 
     display: block;
@@ -142,7 +142,7 @@
 
   @include tablet {
     right: 4px;
-    bottom: 5px;
+    bottom: 6px;
   }
 
   @include mobile {
@@ -152,6 +152,18 @@
 
   &:focus {
     outline: 3px solid deeppink;
+  }
+}
+
+.catalog li:nth-child(3n + 1) a {
+  @include tablet {
+    right: 4px;
+    bottom: 6px;
+  }
+
+  @include mobile {
+    right: 0;
+    bottom: 0;
   }
 }
 
