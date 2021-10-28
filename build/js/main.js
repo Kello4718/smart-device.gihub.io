@@ -1,6 +1,7 @@
 "use strict";
 
 // Переменные
+const body = document.querySelector('.body');
 const orderCallButton = document.querySelector('#order-call');
 const modal = document.querySelector('.modal');
 const modalForm = modal.querySelector('form');
@@ -17,24 +18,57 @@ const footerOurOffice = document.querySelector('.footer__our-office');
 const footerOurOfficeButton = footerOurOffice.querySelector('button');
 const footerOurOfficeSvgPlus = footerOurOffice.querySelector('.footer__our-office-svg-plus');
 const footerOurOfficeSvgMinus = footerOurOffice.querySelector('.footer__our-office-svg-minus');
-const footerOurOfficeList = document.querySelector('.footer__our-office-list'); // Код по работе с модальным окном
+const footerOurOfficeList = document.querySelector('.footer__our-office-list'); // Функция, которая запрещает скролл при открытом модальном окне
+
+const bodyFixPosition = () => {
+  setTimeout(() => {
+    if (!body.hasAttribute('data-body-scroll-fix')) {
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      body.setAttribute('data-body-scroll-fix', scrollPosition);
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.top = `-${scrollPosition}px`;
+      body.style.left = '0';
+      body.style.width = '100%';
+    }
+  }, 15);
+}; // Функция, которая разрешает скролл страницы при закрытии модального окна
+
+
+const bodyUnfixPosition = () => {
+  if (body.hasAttribute('data-body-scroll-fix')) {
+    const scrollPosition = body.getAttribute('data-body-scroll-fix');
+    body.removeAttribute('data-body-scroll-fix');
+    body.style.overflow = '';
+    body.style.position = '';
+    body.style.top = '';
+    body.style.left = '';
+    body.style.width = '';
+    window.scroll(0, scrollPosition);
+  }
+}; // Код по работе с модальным окном
+
 
 orderCallButton.addEventListener('click', evt => {
   evt.preventDefault();
   modal.classList.remove('modal--hide');
   modalInputName.focus();
+  bodyFixPosition();
 });
 modalClose.addEventListener('click', () => {
   modal.classList.add('modal--hide');
+  bodyUnfixPosition();
 });
 document.addEventListener('keydown', evt => {
   if (evt.key === 'ESC' || evt.key === 'Escape') {
     modal.classList.add('modal--hide');
+    bodyUnfixPosition();
   }
 });
 modal.addEventListener('click', evt => {
   if (evt.target === modal) {
     modal.classList.add('modal--hide');
+    bodyUnfixPosition();
   }
 }); // Функция, которая сохраняет данные с формы в local storage
 
@@ -64,12 +98,14 @@ getDataToLocalStorage(); // Аккордеон в футере
 const handlerFooterSection = (sectionList, sectionListClass, sectionButton, sectionSvgPlus, sectionSvgMinus) => {
   if (sectionList.classList.contains(`footer__${sectionListClass}-list--hide`)) {
     sectionList.classList.remove(`footer__${sectionListClass}-list--hide`);
-    sectionButton.style.margin = '0 0 32px';
+    sectionButton.style.margin = '0';
+    sectionList.style.margin = '0 0 32px';
     sectionSvgPlus.style.display = 'none';
     sectionSvgMinus.style.display = 'inherit';
   } else {
     sectionList.classList.add(`footer__${sectionListClass}-list--hide`);
     sectionButton.style.margin = '0';
+    sectionList.style.margin = '0';
     sectionSvgPlus.style.display = 'inherit';
     sectionSvgMinus.style.display = 'none';
   }
