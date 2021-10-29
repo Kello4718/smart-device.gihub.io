@@ -27,7 +27,7 @@
   width: 100%;
   max-width: 1920px;
 
-  padding: 33px 0 275px;
+  padding: 30px 0 274px;
 
   margin: 0 auto;
 
@@ -50,7 +50,7 @@
   align-items: center;
 
   padding: 0 30px;
-  margin: 0 auto 230px;
+  margin: 0 auto 229px;
 
   @include tablet {
     width: 100%;
@@ -113,10 +113,13 @@
   display: flex;
   justify-content: space-between;
 
-  margin: 0 88px 0 0;
+  padding: 20px 0 0;
+  margin: 0 88px 20px 0;
 
   @include tablet {
     width: max-content;
+
+    padding: 0;
     margin: 0 34px 0 0
   }
 
@@ -162,7 +165,8 @@
   display: flex;
   justify-content: space-between;
 
-  margin: 0;
+  padding: 20px 0 0;
+  margin: 0 0 20px;
 
   &:hover {
     color: deepskyblue;
@@ -170,6 +174,9 @@
 
   @include tablet {
     width: max-content;
+
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -368,7 +375,7 @@
   border-radius: 5px;
 
   padding: 17px 0 14px;
-  margin: 0 0 0 98px;
+  margin: 0 0 0 97px;
 
   @include tablet {
     width: 379px;

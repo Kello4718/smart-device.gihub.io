@@ -10,11 +10,13 @@
   inset: 0 0 0 0;
 
   background: rgba(0, 0, 0, 80%);
+
+  overflow-y: scroll;
 }
 
 .modal__wrapper {
   width: 490px;
-  min-height: 605px;
+  max-height: 605px;
 
   position: absolute;
   top: 136px;
@@ -73,8 +75,18 @@
 
   padding: 0 24px;
 
+  border-radius: 0;
+
   &:hover {
     box-shadow: 0 0 10px 5px currentColor;
+  }
+
+  &::placeholder {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 21.5px;
+
+    color: #ffffff;
   }
 }
 
@@ -96,8 +108,18 @@
 
   resize: none;
 
+  border-radius: 0;
+
   &:hover {
     box-shadow: 0 0 10px 5px currentColor;
+  }
+
+  &::placeholder {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 21.5px;
+
+    color: #ffffff;
   }
 }
 

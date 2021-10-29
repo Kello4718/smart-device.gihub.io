@@ -1,5 +1,6 @@
 .footer {
   width: 100%;
+  height: auto;
 
   position: relative;
 
@@ -12,7 +13,7 @@
     height: 1px;
 
     position: absolute;
-    top: 263px;
+    bottom: 19%;
     left: 0;
 
     background: #626962;
@@ -60,19 +61,23 @@
 .footer__wrapper {
   width: 100%;
   max-width: 1476px;
+  height: 100%;
 
   display: grid;
-  grid-template-columns: 1fr 40% 1fr;
+  grid-template-columns: 1fr 40.5% 1fr;
+  grid-template-rows: 1fr;
+  gap: 73px 0;
 
   position: relative;
 
   color: #1B2D37;
 
-  padding: 65px 30px 14px;
+  padding: 64px 30px 14px;
   margin: 0 auto;
 
   @include tablet {
     grid-template-columns: 1fr 1fr;
+    gap: 0;
 
     padding: 20px 24px 24px 25px;
   }
@@ -198,6 +203,7 @@
   line-height: 16px;
   text-transform: uppercase;
   text-align: start;
+  letter-spacing: 0.06em;
 
   display: flex;
   justify-content: space-between;
@@ -224,7 +230,7 @@
 
 .footer__sections-list {
   width: 84%;
-  height: 100px;
+  //height: 100px;
 
   font-family: "PTMono", "Arial", sans-serif;
   font-size: 15px;
@@ -232,9 +238,10 @@
   font-weight: 400;
   list-style: none;
 
-  display: flex;
-  flex-flow: column wrap;
-  gap: 0 20px;
+  display: grid;
+  //flex-flow: column wrap;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 74px;
 
   padding: 0;
   margin: 0;
@@ -242,7 +249,11 @@
   opacity: 50%;
 
   @include tablet {
+    width: 100%;
     height: auto;
+
+    display: flex;
+    flex-flow: row wrap;
   }
 
   @include mobile {
@@ -256,7 +267,51 @@
   width: max-content;
 
   @include tablet {
+    width: 100%;
+
     margin: 0;
+  }
+}
+
+.footer__sections-list li:first-child {
+  @include tablet {
+    order: 0;
+  }
+}
+
+.footer__sections-list li:nth-child(2) {
+  @include tablet {
+    order: 4;
+  }
+}
+
+.footer__sections-list li:nth-child(3) {
+  @include tablet {
+    order: 1;
+  }
+}
+
+.footer__sections-list li:nth-child(4) {
+  @include tablet {
+    order: 5;
+  }
+}
+
+.footer__sections-list li:nth-child(5) {
+  @include tablet {
+    order: 2;
+  }
+}
+
+.footer__sections-list li:nth-child(6) {
+  @include tablet {
+    order: 6;
+  }
+}
+
+.footer__sections-list li:nth-child(7) {
+  @include tablet {
+    order: 3;
   }
 }
 
@@ -282,7 +337,7 @@
   display: flex;
   flex-flow: row wrap;
 
-  padding: 0 0 0 21%;
+  padding: 0 0 0 20%;
 
   @include tablet {
     width: 345px;
@@ -296,7 +351,7 @@
     width: 100%;
 
     border-bottom: 1px solid #626962;
-    
+
     padding: 0;
   }
 }
@@ -407,6 +462,7 @@
 
 .footer__copyright {
   width: 100%;
+  height: max-content;
 
   font-family: "PTMono", "Arial", sans-serif;
   font-size: 13px;
@@ -421,7 +477,7 @@
   display: flex;
   flex-flow: row wrap;
 
-  margin: 73px 0 0;
+  //margin: 73px 0 0;
 
   opacity: 50%;
 

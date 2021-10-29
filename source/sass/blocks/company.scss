@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1230px;
 
-  padding: 112px 30px 111px;
+  padding: 112px 30px 110px;
   margin: 0 auto;
 
   @include tablet {
@@ -28,7 +28,7 @@
   background: white;
 
   padding: 0;
-  margin: 0 0 105px;
+  margin: 0 0 107px;
 
   @include tablet {
 
@@ -264,8 +264,9 @@
 .company__about-main h2 {
   font-size: 36px;
   line-height: 50.63px;
+  font-weight: 400;
 
-  margin: 0 0 20px;
+  margin: 0 0 22px;
 
   @include tablet {
     font-size: 32px;
@@ -281,8 +282,6 @@
     margin: 0 0 20px;
   }
 }
-
-
 
 .company__about-main p {
   width: 100%;
@@ -325,7 +324,13 @@
   }
 }
 
+.company__about-main-desktop-text {
+  width: 100%;
+}
+
 .company__about-main-desktop-text p {
+  width: 92%;
+
   display: block;
 
   margin: 0 0 22px;
@@ -338,7 +343,7 @@
 .company__about-main-desktop-text p + p {
   display: block;
 
-  margin: 0 0 38px;
+  margin: 0 0 35px;
 
   @include tablet {
     display: none;
