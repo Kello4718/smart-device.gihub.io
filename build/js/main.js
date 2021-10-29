@@ -9,6 +9,11 @@ const modalInputName = document.querySelector('.modal__input-name');
 const modalInputPhone = document.querySelector('.modal__input-phone');
 const modalTextareaQuestion = document.querySelector('.modal__textarea');
 const modalClose = document.querySelector('.modal__close');
+const callback = document.querySelector('.callback');
+const callbackForm = callback.querySelector('form');
+const callbackInputName = callback.querySelector('input[type=text]');
+const callbackInputPhone = callback.querySelector('input[type=tel]');
+const callbackTextareaQuestion = callback.querySelector('textarea');
 const footerSections = document.querySelector('.footer__sections');
 const footerSectionsButton = footerSections.querySelector('button');
 const footerSectionsSvgPlus = footerSections.querySelector('.footer__sections-svg-plus');
@@ -70,29 +75,27 @@ modal.addEventListener('click', evt => {
     modal.classList.add('modal--hide');
     bodyUnfixPosition();
   }
-}); // Функция, которая сохраняет данные с формы в local storage
-
-const toUseMyLocalStorage = () => {
-  localStorage.setItem('name', modalInputName.value);
-  localStorage.setItem('tel', modalInputPhone.value);
-  localStorage.setItem('question', modalTextareaQuestion.value);
-};
-
-const getDataToLocalStorage = () => {
-  modalInputName.addEventListener('input', toUseMyLocalStorage);
-  modalInputPhone.addEventListener('input', toUseMyLocalStorage);
-  modalTextareaQuestion.addEventListener('input', toUseMyLocalStorage);
-  modalForm.addEventListener('submit', evt => {
-    evt.preventDefault();
-    toUseMyLocalStorage();
-    modalInputName.value = '';
-    modalInputPhone.value = '';
-    modalTextareaQuestion.value = '';
-    modal.classList.add('modal--hide');
-  });
-};
-
-getDataToLocalStorage(); // Аккордеон в футере
+});
+modalForm.addEventListener('submit', evt => {
+  evt.preventDefault();
+  localStorage.setItem('modalName', modalInputName.value);
+  localStorage.setItem('modalTel', modalInputPhone.value);
+  localStorage.setItem('modalQuestion', modalTextareaQuestion.value);
+  modalInputName.value = '';
+  modalInputPhone.value = '';
+  modalTextareaQuestion.value = '';
+  modal.classList.add('modal--hide');
+  bodyUnfixPosition();
+});
+callbackForm.addEventListener('submit', evt => {
+  evt.preventDefault();
+  localStorage.setItem('formName', callbackInputName.value);
+  localStorage.setItem('formTel', callbackInputPhone.value);
+  localStorage.setItem('formQuestion', callbackTextareaQuestion.value);
+  callbackInputName.value = '';
+  callbackInputPhone.value = '';
+  callbackTextareaQuestion.value = '';
+}); // Аккордеон в футере
 // Функция, которая показывает и скрывает контент раздела по клику
 
 const handlerFooterSection = (sectionList, sectionListClass, sectionButton, sectionSvgPlus, sectionSvgMinus) => {
@@ -112,26 +115,31 @@ const handlerFooterSection = (sectionList, sectionListClass, sectionButton, sect
 };
 
 const handlerFooterContent = () => {
-  footerSectionsButton.addEventListener('click', () => {
-    handlerFooterSection(footerSectionsList, 'sections', footerSectionsButton, footerSectionsSvgPlus, footerSectionsSvgMinus);
+  if (window.innerWidth < 770) {
+    footerSectionsButton.addEventListener('click', () => {
+      handlerFooterSection(footerSectionsList, 'sections', footerSectionsButton, footerSectionsSvgPlus, footerSectionsSvgMinus);
 
-    if (!footerOurOfficeList.classList.contains('footer__our-office-list--hide')) {
-      footerOurOfficeList.classList.add('footer__our-office-list--hide');
-      footerOurOfficeButton.style.margin = '0';
-      footerOurOfficeSvgPlus.style.display = 'inherit';
-      footerOurOfficeSvgMinus.style.display = 'none';
-    }
-  });
-  footerOurOfficeButton.addEventListener('click', () => {
-    handlerFooterSection(footerOurOfficeList, 'our-office', footerOurOfficeButton, footerOurOfficeSvgPlus, footerOurOfficeSvgMinus);
+      if (!footerOurOfficeList.classList.contains('footer__our-office-list--hide')) {
+        footerOurOfficeList.classList.add('footer__our-office-list--hide');
+        footerOurOfficeButton.style.margin = '0';
+        footerOurOfficeSvgPlus.style.display = 'inherit';
+        footerOurOfficeSvgMinus.style.display = 'none';
+      }
+    });
+  }
 
-    if (!footerSectionsList.classList.contains('footer__sections-list--hide')) {
-      footerSectionsList.classList.add('footer__sections-list--hide');
-      footerSectionsButton.style.margin = '0';
-      footerSectionsSvgPlus.style.display = 'inherit';
-      footerSectionsSvgMinus.style.display = 'none';
-    }
-  });
+  if (window.innerWidth < 770) {
+    footerOurOfficeButton.addEventListener('click', () => {
+      handlerFooterSection(footerOurOfficeList, 'our-office', footerOurOfficeButton, footerOurOfficeSvgPlus, footerOurOfficeSvgMinus);
+
+      if (!footerSectionsList.classList.contains('footer__sections-list--hide')) {
+        footerSectionsList.classList.add('footer__sections-list--hide');
+        footerSectionsButton.style.margin = '0';
+        footerSectionsSvgPlus.style.display = 'inherit';
+        footerSectionsSvgMinus.style.display = 'none';
+      }
+    });
+  }
 };
 
 handlerFooterContent(); // Маска для телефона
