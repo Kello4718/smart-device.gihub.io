@@ -78,20 +78,21 @@ modal.addEventListener('click', evt => {
 });
 modalForm.addEventListener('submit', evt => {
   evt.preventDefault();
-  localStorage.setItem('modalName', modalInputName.value);
-  localStorage.setItem('modalTel', modalInputPhone.value);
-  localStorage.setItem('modalQuestion', modalTextareaQuestion.value);
+  localStorage.setItem('name', modalInputName.value);
+  localStorage.setItem('phone', modalInputPhone.value);
+  localStorage.setItem('question', modalTextareaQuestion.value);
   modalInputName.value = '';
   modalInputPhone.value = '';
   modalTextareaQuestion.value = '';
   modal.classList.add('modal--hide');
   bodyUnfixPosition();
-});
+}); // Обработчик события на отправку формы
+
 callbackForm.addEventListener('submit', evt => {
   evt.preventDefault();
-  localStorage.setItem('formName', callbackInputName.value);
-  localStorage.setItem('formTel', callbackInputPhone.value);
-  localStorage.setItem('formQuestion', callbackTextareaQuestion.value);
+  localStorage.setItem('name', callbackInputName.value);
+  localStorage.setItem('phone', callbackInputPhone.value);
+  localStorage.setItem('question', callbackTextareaQuestion.value);
   callbackInputName.value = '';
   callbackInputPhone.value = '';
   callbackTextareaQuestion.value = '';
