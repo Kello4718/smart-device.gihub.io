@@ -75,28 +75,27 @@ modal.addEventListener('click', evt => {
     modal.classList.add('modal--hide');
     bodyUnfixPosition();
   }
-});
-modalForm.addEventListener('submit', evt => {
-  evt.preventDefault();
-  localStorage.setItem('name', modalInputName.value);
-  localStorage.setItem('phone', modalInputPhone.value);
-  localStorage.setItem('question', modalTextareaQuestion.value);
-  modalInputName.value = '';
-  modalInputPhone.value = '';
-  modalTextareaQuestion.value = '';
-  modal.classList.add('modal--hide');
-  bodyUnfixPosition();
-}); // Обработчик события на отправку формы
+}); // Функция, по отправки формы
 
-callbackForm.addEventListener('submit', evt => {
-  evt.preventDefault();
-  localStorage.setItem('name', callbackInputName.value);
-  localStorage.setItem('phone', callbackInputPhone.value);
-  localStorage.setItem('question', callbackTextareaQuestion.value);
-  callbackInputName.value = '';
-  callbackInputPhone.value = '';
-  callbackTextareaQuestion.value = '';
-}); // Аккордеон в футере
+const toPushForm = (form, formName, formPhone, formQuestion) => {
+  form.addEventListener('submit', evt => {
+    evt.preventDefault();
+    localStorage.setItem('name', formName.value);
+    localStorage.setItem('phone', formPhone.value);
+    localStorage.setItem('question', formQuestion.value);
+    formName.value = '';
+    formPhone.value = '';
+    formQuestion.value = '';
+
+    if (evt.target === modalForm) {
+      modal.classList.add('modal--hide');
+      bodyUnfixPosition();
+    }
+  });
+};
+
+toPushForm(modalForm, modalInputName, modalInputPhone, modalTextareaQuestion);
+toPushForm(callbackForm, callbackInputName, callbackInputPhone, callbackTextareaQuestion); // Аккордеон в футере
 // Функция, которая показывает и скрывает контент раздела по клику
 
 const handlerFooterSection = (sectionList, sectionListClass, sectionButton, sectionSvgPlus, sectionSvgMinus) => {
