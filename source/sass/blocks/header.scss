@@ -42,7 +42,8 @@
 }
 
 .header__info {
-  width: clamp(320px, 100%, 1470px);
+  width: 100%;
+  max-width: 1470px;
 
   display: flex;
   align-items: center;
