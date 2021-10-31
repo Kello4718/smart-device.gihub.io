@@ -24,8 +24,7 @@
 }
 
 .header__wrapper {
-  width: 100%;
-  max-width: 1920px;
+  width: clamp(320px, 100%, 1920px);
 
   padding: 30px 0 274px;
 
@@ -43,8 +42,7 @@
 }
 
 .header__info {
-  width: 100%;
-  max-width: 1470px;
+  width: clamp(320px, 100%, 1470px);
 
   display: flex;
   align-items: center;
@@ -53,9 +51,6 @@
   margin: 0 auto 229px;
 
   @include tablet {
-    width: 100%;
-    max-width: none;
-
     padding: 0;
     margin: 0 0 116px;
   }
